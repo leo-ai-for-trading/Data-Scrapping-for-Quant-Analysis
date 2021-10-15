@@ -30,11 +30,11 @@ for months in test.find_all('tbody'):
 
 list_ = [m,pass_FY21,pass_FY22,ch]
 df = pd.DataFrame(list_).transpose()
-df.columns = ['mese','passeggeri_2021','previsione_passeggeri_2022','cambio_previsto']
-df.set_index('mese',inplace=True)
-df['passeggeri_2021'] = df['passeggeri_2021'].str.replace('m', '')
-df['passeggeri_2021'] = df['passeggeri_2021'].astype(float)
-df['previsione_passeggeri_2022'] = df['previsione_passeggeri_2022'].str.replace('m', '')
-df['previsione_passeggeri_2022'] = df['previsione_passeggeri_2022'].astype(float)
+df.columns = ['Months','Passengers_2021','E_passengers_2022','E_change']
+df.set_index('Months',inplace=True)
+df['Passengers_2021'] = df['Passengers_2021'].str.replace('m', '')
+df['Passengers_2021'] = df['Passengers_2021'].astype(float)
+df['E_passengers_2022'] = df['E_passengers_2022'].str.replace('m', '')
+df['E_passengers_2022'] = df['E_passengers_2022'].astype(float)
 
 print('Data expressed in mln',df)
