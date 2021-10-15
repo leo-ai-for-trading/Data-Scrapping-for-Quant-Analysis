@@ -32,8 +32,9 @@ list_ = [m,pass_FY21,pass_FY22,ch]
 df = pd.DataFrame(list_).transpose()
 df.columns = ['mese','passeggeri_2021','previsione_passeggeri_2022','cambio_previsto']
 df.set_index('mese',inplace=True)
-df['passeggeri_2021'] = df['passeggeri_2021'].str.replace(r'\D', '').astype(int)
-df['previsione_passeggeri_2022'] = df['previsione_passeggeri_2022'].str.replace(r'\D', '').astype(int)
-df['cambio_previsto'] = df['cambio_previsto'].str.rstrip('%')
+df['passeggeri_2021'] = df['passeggeri_2021'].str.replace('m', '')
+df['passeggeri_2021'] = df['passeggeri_2021'].astype(float)
+df['previsione_passeggeri_2022'] = df['previsione_passeggeri_2022'].str.replace('m', '')
+df['previsione_passeggeri_2022'] = df['previsione_passeggeri_2022'].astype(float)
 
 print('Data expressed in mln',df)
