@@ -34,6 +34,6 @@ df.columns = ['mese','passeggeri_2021','previsione_passeggeri_2022','cambio_prev
 df.set_index('mese',inplace=True)
 df['passeggeri_2021'] = df['passeggeri_2021'].str.replace(r'\D', '').astype(int)
 df['previsione_passeggeri_2022'] = df['previsione_passeggeri_2022'].str.replace(r'\D', '').astype(int)
-#df['cambio_previsto'] = df['cambio_previsto'].str.rstrip('%')
+df['cambio_previsto'] = df['cambio_previsto'].str.rstrip('%')
 
-print(df)
+print('Data expressed in mln',df)
